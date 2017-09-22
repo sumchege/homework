@@ -36,7 +36,7 @@ int main(int argc, char **argv)
   // Send MAX_BUFFERSZ
   char buffer[MAX_BUFFERSZ];
   
-  if((qchannel = mq_open("/fifo1", O_CREAT | O_RDWR, 0600,NULL)) == -1)
+  if((qchannel = mq_open("/fifo1", O_CREAT | O_RDWR, 0600,&attr)) == -1)
   {
     perror("Creating queue.");
     return -1;
@@ -53,6 +53,16 @@ int main(int argc, char **argv)
     count = *((int*)buffer);
     int dsp = count * 10;
     printf("Got: %d\n", dsp);
+  }
+  
+  if (mq_close(qchannel) == -1)
+  {
+    perror("Closing queue error");
+  }
+  
+  // unlink the Queue
+  if(mq_unlink("fifo1") == -1){
+    perror("Removing Q error");
   }
   
   return 0;

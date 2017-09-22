@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <mqueue.h>
 
 /*
@@ -37,6 +38,7 @@ int main()
   while(1)
   {
     // generate a random number and send through channel to the other process
+    usleep(100000);
     
     if(count > 100)
       count = 0;
@@ -46,6 +48,17 @@ int main()
     }
     printf("sent: %d\n", count);
     count++;
+  }
+  
+  
+  if (mq_close(qchannel) == -1)
+  {
+    perror("Closing queue error");
+  }
+  
+  // unlink the Queue
+  if(mq_unlink("fifo1") == -1){
+    perror("Removing Q error");
   }
   
   return 0;
