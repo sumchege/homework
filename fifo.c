@@ -18,7 +18,7 @@ int main()
     char pipeName[] = "/tmp/trypipe";
     int ret_val = mkfifo(pipeName, 0666);
     
-    if(ret_val == -1) && (errno == !=EEXIST)
+    if((ret_val == -1) && (errno == !=EEXIST))
     {
         perror("Error creating pipe");
     }
