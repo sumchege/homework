@@ -1,11 +1,14 @@
 TEMPLATE = app
 
-QT += qml quick widgets
+QT += qml quick widgets serialport
 
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    clockcircle.cpp
+    clockcircle.cpp \
+    levelgauge.cpp \
+    qchannel_serial.cpp \
+    counter.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,4 +35,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    clockcircle.h
+    clockcircle.h \
+    levelgauge.h \
+    qchannel_serial.h \
+    counter.h

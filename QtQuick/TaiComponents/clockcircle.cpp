@@ -14,7 +14,7 @@ clockCircle::clockCircle(QQuickItem *parent): QQuickPaintedItem(parent),
 
     connect(internalTimer, &QTimer::timeout, [=](){
         setAngle(angle() - 0.3);
-        setCircleTime(circleTime().addMSecs(50));
+        setCircleTime(circleTime().addMSecs(20));
         update();
     });
 
@@ -37,7 +37,7 @@ void clockCircle::paint(QPainter *painter)
                      m_angle*16);
 
     painter->setBrush(brush);
-    painter->drawEllipse(boundingRect().adjusted(10, 10, -10, -10));
+    painter->drawEllipse(boundingRect().adjusted(20, 20, -20, -20));
 
 }
 

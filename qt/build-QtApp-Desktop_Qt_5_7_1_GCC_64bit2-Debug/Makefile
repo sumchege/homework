@@ -186,6 +186,7 @@ DIST          = ../../../../Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.7/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt/5.7/gcc_64/mkspecs/features/spec_post.prf \
+		../QtApp/.qmake.stash \
 		../../../../Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.7/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt/5.7/gcc_64/mkspecs/features/default_pre.prf \
@@ -350,6 +351,7 @@ Makefile: ../QtApp/QtApp.pro ../../../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.c
 		../../../../Qt/5.7/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt/5.7/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.7/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt/5.7/gcc_64/mkspecs/features/default_pre.prf \
@@ -510,6 +512,7 @@ Makefile: ../QtApp/QtApp.pro ../../../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.c
 ../../../../Qt/5.7/gcc_64/mkspecs/features/qt_config.prf:
 ../../../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../../Qt/5.7/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/5.7/gcc_64/mkspecs/features/toolchain.prf:
 ../../../../Qt/5.7/gcc_64/mkspecs/features/default_pre.prf:
@@ -579,6 +582,7 @@ compiler_rcc_clean:
 qrc_qml.cpp: ../QtApp/qml.qrc \
 		../../../../Qt/5.7/gcc_64/bin/rcc \
 		../QtApp/MainForm.ui.qml \
+		../QtApp/Button.qml \
 		../QtApp/main.qml
 	/home/samuel/Qt/5.7/gcc_64/bin/rcc -name qml ../QtApp/qml.qrc -o qrc_qml.cpp
 
